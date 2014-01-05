@@ -1,0 +1,22 @@
+#! /usr/bin/python
+
+import os
+import smtplib
+import time
+
+
+def send_email():
+    with open('data.txt', 'wb') as ip_data:
+        ip_data.write('To:abcd@abcd.com\n')
+        ip_data.write('From:ROBIN\n')
+        ip_data.write('Subject:IP_DATA\n')
+        ip_data.write('\n\n\n\n')
+        os.system('echo "\n========================\n">>external.txt')
+        os.system('echo >>external.txt')
+        os.system('curl ifconfig.me>>external.txt')
+
+        os.system('ssmtp abcd@abcd.com<external.txt')
+
+while(True):
+    send_email()
+    time.sleep(7200)
